@@ -6,6 +6,11 @@ import java.awt.BorderLayout;
 public class BorderLayoutDemp {
 
     public BorderLayoutDemp() {
+       
+    }
+
+    public static void main(String[] args) {
+//        new BorderLayoutDemp();
         JFrame frame = new JFrame("BorderLayout demo");
         frame.add(new JButton("EAST"), BorderLayout.EAST);
         frame.add(new JButton("WEST"), BorderLayout.WEST);
@@ -15,10 +20,6 @@ public class BorderLayoutDemp {
         frame.setSize(500, 500);
         frame.setVisible(true);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-    }
-
-    public static void main(String[] args) {
-        new BorderLayoutDemp();
     }
 
 }
