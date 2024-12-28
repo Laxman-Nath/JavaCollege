@@ -1,22 +1,14 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
- */
+
 package grouplayoutdemo;
 
-//import java.awt.Container;
+
 import javax.swing.*;
 
 
-/**
- *
- * @author Saitech
- */
+
 public class GroupLayoutDemo {
 
-    /**
-     * @param args the command line arguments
-     */
+    
     public static void main(String[] args) {
         // Create a new frame
         JFrame frame = new JFrame("GroupLayout Demo");

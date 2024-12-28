@@ -10,22 +10,17 @@ import javax.swing.tree.DefaultTreeModel;
 
 public class TreeExample {
     public static void main(String[] args) {
-        // Create the root node
-        DefaultMutableTreeNode root = new DefaultMutableTreeNode("Root");
-
-        // Create child nodes
-        DefaultMutableTreeNode child1 = new DefaultMutableTreeNode("Child 1");
-        DefaultMutableTreeNode child2 = new DefaultMutableTreeNode("Child 2");
-
-        // Add child nodes to root
+        DefaultMutableTreeNode root=new DefaultMutableTreeNode("Root");
+        
+        DefaultMutableTreeNode child1=new DefaultMutableTreeNode("Child 1");
+        DefaultMutableTreeNode child2=new DefaultMutableTreeNode("Child 2");
+        
         root.add(child1);
         root.add(child2);
-
-        // Create the tree model and tree
-        DefaultTreeModel treeModel = new DefaultTreeModel(root);
-        JTree tree = new JTree(treeModel);
-
-        // Create a frame to hold the tree
+        DefaultTreeModel treeModel=new DefaultTreeModel(root);
+        
+        JTree tree=new JTree(treeModel);
+              // Create a frame to hold the tree
         JFrame frame = new JFrame("JTree Example");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(300, 200);

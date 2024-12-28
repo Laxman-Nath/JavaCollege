@@ -1,7 +1,7 @@
 
 package gridlayoutdemo;
 
-import java.awt.BorderLayout;
+
 import java.awt.GridLayout;
 import javax.swing.JButton;
 import javax.swing.JFrame;

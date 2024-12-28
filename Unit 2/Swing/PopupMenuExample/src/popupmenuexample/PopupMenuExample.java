@@ -4,67 +4,69 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
-public class PopupMenuExample {
-    public static void main(String[] args) {
-        // Create the frame
-        JFrame frame = new JFrame("Popup Menu Example");
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(400, 300);
-
-        // Create a text area (or any other component where you want the popup menu)
+public class PopupMenuExample extends JFrame {
+    public PopupMenuExample() {
+        // Create a JTextArea
         JTextArea textArea = new JTextArea();
-        frame.add(textArea);
+        add(new JScrollPane(textArea));
 
-        // Create a popup menu
+        // Create a JPopupMenu
         JPopupMenu popupMenu = new JPopupMenu();
 
-        // Create menu items
+        // Create and add menu items to the popup menu
+        JMenuItem cutItem = new JMenuItem("Cut");
         JMenuItem copyItem = new JMenuItem("Copy");
         JMenuItem pasteItem = new JMenuItem("Paste");
-        JMenuItem cutItem = new JMenuItem("Cut");
 
-        // Add menu items to the popup menu
+        // Add action listeners to the menu items
+        cutItem.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                textArea.cut();
+            }
+        });
+        copyItem.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                textArea.copy();
+            }
+        });
+        pasteItem.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                textArea.paste();
+            }
+        });
+
+        // Add items to the popup menu
+        popupMenu.add(cutItem);
         popupMenu.add(copyItem);
         popupMenu.add(pasteItem);
-        popupMenu.add(cutItem);
 
-        // Add action listeners to menu items
-        copyItem.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                textArea.copy(); // Perform copy action
-            }
-        });
-
-        pasteItem.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                textArea.paste(); // Perform paste action
-            }
-        });
-
-        cutItem.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                textArea.cut(); // Perform cut action
-            }
-        });
-
-        // Add a mouse listener to the text area to show the popup menu
+        // Add a mouse listener to show the popup menu on right-click
         textArea.addMouseListener(new MouseAdapter() {
+            @Override
             public void mousePressed(MouseEvent e) {
-                showPopup(e);
+               
+                    popupMenu.show(textArea, e.getX(), e.getY());
+               
             }
-
+            @Override
             public void mouseReleased(MouseEvent e) {
-                showPopup(e);
-            }
-
-            private void showPopup(MouseEvent e) {
-                if (e.isPopupTrigger()) {
-                    popupMenu.show(e.getComponent(), e.getX(), e.getY());
-                }
+               
+                    popupMenu.show(textArea, e.getX(), e.getY());
+               
             }
         });
 
-        // Make the frame visible
-        frame.setVisible(true);
+        // Frame setup
+        setTitle("Popup Menu Example");
+        setSize(400, 400);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setVisible(true);
+    }
+
+    public static void main(String[] args) {
+        new PopupMenuExample();
     }
 }

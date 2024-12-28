@@ -26,14 +26,14 @@ public class BorderDemo extends JFrame {
         p1.add(l1);
         p1.add(t1);
         p1.add(btn1);
-//        p1.setBorder(BorderFactory.createLineBorder(Color.yellow,10));
+//        p1.setBorder(BorderFactory.createLineBorder(Color.yellow,20));
 //          p1.setBorder(BorderFactory.createTitledBorder( "Login"));
 //        p1.setBorder(BorderFactory.createEmptyBorder(100, 5, 5, 5));
-//        p1.setBorder(BorderFactory.createEtchedBorder(EtchedBorder.LOWERED));
-         p1.setBorder(BorderFactory.createCompoundBorder(
-            BorderFactory.createLineBorder(Color.BLUE, 5),
-            BorderFactory.createEmptyBorder(10, 10, 10, 10)
-        ));
+        p1.setBorder(BorderFactory.createEtchedBorder(EtchedBorder.LOWERED));
+//         p1.setBorder(BorderFactory.createCompoundBorder(
+//            BorderFactory.createLineBorder(Color.BLUE, 5),
+//            BorderFactory.createEmptyBorder(10, 10, 10, 10)
+//        ));
         add(p1);
         setLayout(new FlowLayout());
         setSize(400, 400);

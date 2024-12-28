@@ -4,31 +4,19 @@
  */
 package filechooserexample;
 import javax.swing.JFileChooser;
-import javax.swing.filechooser.FileNameExtensionFilter;
+
 import java.io.File;
+import javax.swing.JOptionPane;
 public class FileChooserExample {
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
-        JFileChooser fileChooser = new JFileChooser();
+        JFileChooser fileChooser=new JFileChooser();
+        fileChooser.showOpenDialog(null);
         
-        // Optionally set a filter to only show certain file types
-//        FileNameExtensionFilter filter = new FileNameExtensionFilter("Text Files", "txt");
-//        fileChooser.setFileFilter(filter);
-        
-        // Show the open dialog
-        int returnValue = fileChooser.showOpenDialog(null);
-        
-        // Check if the user selected a file
-        if (returnValue == JFileChooser.APPROVE_OPTION) {
-            File selectedFile = fileChooser.getSelectedFile();
-            System.out.println("Selected file: " + selectedFile.getAbsolutePath());
-        } else {
-            System.out.println("File selection canceled.");
-        }
+        JOptionPane.showMessageDialog(null,"Selected file:"+fileChooser.getSelectedFile(),"File Selection",JOptionPane.INFORMATION_MESSAGE);
     }
     
 }

@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
- */
+
 package keylistener;
 
 import java.awt.FlowLayout;
@@ -11,10 +8,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JTextField;
 
-/**
- *
- * @author Saitech
- */
+
 public class KeyListener extends JFrame{
 
 public KeyListener(){

@@ -16,6 +16,7 @@ class Listener implements ActionListener{
     public Listener(ActionListener3 lt){
         this.a=lt;
     }
+    @Override
     public void actionPerformed(ActionEvent e){
         this.a.tf.setText("Welcome");
     }
